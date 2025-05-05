@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import React from 'react'
 
 // 导航链接配置
@@ -10,11 +11,11 @@ const navigationLinks = [
   { href: '/contact', label: 'Contact' },
 ]
 
-// 公司信息配置
-const companyInfo = {
-  name: 'Company Name',
-  logo: '/logo.png', // 如果有logo的话
-}
+// // 公司信息配置
+// const companyInfo = {
+//   name: 'Company Name',
+//   logo: '/logo.png', // 如果有logo的话
+// }
 
 // 导航栏样式配置
 const styles = {
@@ -23,7 +24,8 @@ const styles = {
   navContainer: 'flex justify-between h-16',
   leftSection: 'flex items-center',
   logoContainer: 'flex-shrink-0 flex items-center pl-10',
-  logo: 'text-xl font-bold text-gray-800',
+  logo: 'text-xl font-bold text-gray-800 flex items-center gap-2',
+  logoImage: 'w-6 h-6',
   companyInfo: 'hidden md:block text-sm text-gray-500 ml-8',
   linksContainer: 'hidden sm:ml-6 sm:flex sm:space-x-8',
   link: 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium',
@@ -36,6 +38,9 @@ const styles = {
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
 
+  const projectName = process.env.PROJECT_NAME;
+  const logo = process.env.logo;
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
   }
@@ -47,7 +52,14 @@ export default function Navbar() {
           <div className={styles.leftSection}>
             <div className={styles.logoContainer}>
               <Link href="/" className={styles.logo}>
-                {companyInfo.name}
+                <Image
+                  src={logo}
+                  alt="Logo"
+                  width={24}
+                  height={24}
+                  className={styles.logoImage}
+                />
+                {projectName}
               </Link>
             </div>
             {/*<div className={styles.companyInfo}>*/}

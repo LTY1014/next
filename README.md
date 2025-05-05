@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Next
 
-## Getting Started
+<p align=center>
+    <a href="http://gitee.com/liang-tian-yu">Next</a>
+</p>
+<p align="center">
+<a target="_blank" href="http://gitee.com/liang-tian-yu">
+    <img src="https://img.shields.io/badge/Next-15.3.1-green" ></img>
+    <img src="https://img.shields.io/badge/react-19-green" ></img>
+    <img src="https://img.shields.io/badge/tailwindcss-4-blue" ></img>
+</a></p>
 
-First, run the development server:
+**Next实现官网站点搭建**
 
-```bash
+
+
+启动命令
+
+```
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> 详见请看 package.json
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+[参考Next官网](https://nextjs.frontendx.cn/)
 
-To learn more about Next.js, take a look at the following resources:
+## 配置
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- next.config.ts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+env定义
 
-## Deploy on Vercel
+```
+    env: {
+        PROJECT_NAME: "project name",
+        logo: '/logo.png',
+    },
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+组件中得到对应值
+
+```
+  const projectName = process.env.PROJECT_NAME;
+```
+

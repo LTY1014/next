@@ -1,4 +1,6 @@
 export default function Footer() {
+  const projectName = process.env.PROJECT_NAME;
+
   return (
     <footer className="bg-gray-800 text-white">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
@@ -27,7 +29,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-gray-700 text-center text-gray-300">
-          <p>&copy; {new Date().getFullYear()} Company Name. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {projectName}. All rights reserved.</p>
         </div>
       </div>
     </footer>
